@@ -9,7 +9,24 @@ export default {
     "./error.vue",
   ],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        'infinite-scroll': 'infinite-scroll 6s linear infinite',
+      },
+      keyframes: {
+        'infinite-scroll': {
+          '0%, 37.5%': {
+            transform: 'translateY(-100%)',
+          },
+          '50%, 87.5%': {
+            transform: 'translateY(-60%)',
+          },
+          '100%': {
+            transform: 'translateY(-20%)',
+          },
+        }
+      }                    
+    },
   },
   plugins: [],
 }
