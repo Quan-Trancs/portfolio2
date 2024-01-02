@@ -1,6 +1,12 @@
 <template>
     <div>
         <div>.</div>
+        <a class="object-fill h-0 w-0">
+          <img class="h-[0px]" src="../public/BookStore.png" alt=".">
+        </a>
+        <a class="object-fill h-0 w-0">
+          <img class="h-[0px]" src="../public/Portfolio.png" alt=".">
+        </a>
         <div class="mt-12">
             <div class="mx-30 mb-10">
                 <div class="text-5xl font-bold text-center">Personal Projects</div>
@@ -57,12 +63,12 @@ interface CustomProject {
   github: String
 }
 const options = ref(<CustomProject[]>[
-  { url: '/_nuxt/public/Portfolio.png', 
+  { url: '/_nuxt/Portfolio.bc253c03.png', 
     name: 'Portfolio', 
     discription: 'This project is centered around creating a dynamic portfolio showcase using Nuxt, JavaScript, CSS, and Tailwind for building user interfaces. The primary objective is to develop an appealing and responsive portfolio website that highlights skills, and experiences of an individual or organization.', 
     github: 'https://github.com/Quan-Trancs/portfolio2' 
   },
-  { url: '/_nuxt/public/BookStore.png', 
+  { url: '/_nuxt/BookStore.2d7509f2.png', 
     name: 'BookStore', 
     discription: 'This project is centered around developing online bookstore\'s comprehensive database and reliable backend system, ensuring the secure handling of various bookstore functions, incorporating a robust validation system for enhanced security measures. Furthermore, I imply multi-threading system with Asynchronous Request-Reply pattern to efficiently manage and process concurrent client-server connections, resulting in significantly faster and more reliable data processing process.',
     github: 'https://github.com/Quan-Trancs/BookStoreBackEnd'
