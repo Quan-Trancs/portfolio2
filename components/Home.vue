@@ -16,10 +16,10 @@
             </div>
         </div>
         <div class="z-10 pt-[83px]">
-            <img src="../avatar2.png" alt="avatar" class=""/>
+            <img src="../public/avatar2.png" alt="avatar" class=""/>
         </div>
         <div class="ml-[-400px] pt-[83px]">
-            <img src="../avatar.png" alt="avatar" class="h-[400px]"/>
+            <img src="../public/avatar.png" alt="avatar" class="h-[400px]"/>
         </div>
     </div>
 </template>

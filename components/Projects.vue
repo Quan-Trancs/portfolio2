@@ -2,7 +2,7 @@
     <div>
         <div>.</div>
         <div class="mt-12">
-            <div class="mx-10 px-20 mb-10">
+            <div class="mx-30 mb-10">
                 <div class="text-5xl font-bold text-center">Personal Projects</div>
             </div>
             <div class="w-full gap-0 flex justify-center align-middle">
@@ -13,10 +13,10 @@
                         :key="index"
                         :middleIndex="middleIndex">
                             <a v-if="index != 1" class="object-fill">
-                                <img class="h-[100px] w-[100px] bg-white rounded-lg" v-bind:src="slot.url" alt="Python"/>
+                                <img class="h-[100px] w-[100px] bg-white rounded-lg" v-bind:src="slot.url" alt="ProjectSide"/>
                             </a>
                             <a v-if="index == 1" class="object-fill ">
-                                <img class="h-[150px] w-[200px] bg-white rounded-lg" v-bind:src="slot.url" alt="Python"/>
+                                <img class="h-[150px] w-[200px] bg-sky-600 rounded-lg p-1 shadow-xl shadow-gray-600/50" v-bind:src="slot.url" alt="ProjectMiddle"/>
                             </a>
                         </div>
                     </div>
@@ -24,17 +24,24 @@
                 <button @click="next()" class="h-10 w-10 mt-12 text-3xl text-neutral-100">&gt</button>
             </div>
         </div>
-        <div class="flex justify-between mx-20 mb-10">
-            <a class="object-fill">
-                <img class="h-[260px] w-[400px] bg-white rounded-lg" v-bind:src="options[currentProject].url" alt="Python"/>
+        <div class="flex justify-between mx-10 mb-10 items-end">
+            <a class="object-fill flex">
+                <img class="h-[260px] w-[400px] bg-sky-600 rounded-lg p-3" :src="options[currentProject].url" alt="SelectedProject"/>
+                <a :href="options[currentProject].github" target="_blank" class="ml-2 mt-[210px]">
+                  <button class="h-12 rounded-md bg-sky-600 hover:shadow-lg hover:shadow-sky-600/50">
+                    <img src="../public/githubLogo.png" alt="Linkedin" class="h-12"/>
+                  </button>
+                </a>
             </a>
-            <div class="mr-10">
-                <div class="text-center font-bold text-3xl pb-8">
-                    name
+            <div class="h-[260px] flex items-start">
+              <div class="mr-10">
+                <div class="text-center font-bold text-3xl mb-8">
+                    {{options[currentProject].name}}
                 </div>
                 <div class="w-[500px] text-center">
-                    This project focuses on the research, development, and implementation of a precise and effective strategy to achieve a notable 90% winning probability in the universally recognized game of Rock-Paper-Scissors (RPS). Rock-Paper-Scissors, a fundamental hand game played globally, served as the foundation for our initiative to elevate player success while upholding the game's inherent simplicity and fairness.
+                    {{options[currentProject].discription}}
                 </div>
+              </div>
             </div>
         </div>
     </div>
@@ -43,14 +50,24 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 
-interface CustomImage {
+interface CustomProject {
   url: string;
+  name: String;
+  discription: String;
+  github: String
 }
-const options = ref(<CustomImage[]>[
-  { url: '/_nuxt/public/cLogo.png' },
-  { url: '/_nuxt/public/javaLogo.png' },
-  { url: '/_nuxt/public/sqlLogo.png' },
-  { url: '/_nuxt/public/pythonLogo.png' },
+const options = ref(<CustomProject[]>[
+  { url: '/_nuxt/public/Portfolio.png', 
+    name: 'Portfolio', 
+    discription: 'This project is centered around creating a dynamic portfolio showcase using Nuxt, JavaScript, CSS, and Tailwind for building user interfaces. The primary objective is to develop an appealing and responsive portfolio website that highlights skills, and experiences of an individual or organization.', 
+    github: 'https://github.com/Quan-Trancs/portfolio2' 
+  },
+  { url: '/_nuxt/public/BookStore.png', 
+    name: 'BookStore', 
+    discription: 'This project is centered around developing online bookstore\'s comprehensive database and reliable backend system, ensuring the secure handling of various bookstore functions, incorporating a robust validation system for enhanced security measures. Furthermore, I imply multi-threading system with Asynchronous Request-Reply pattern to efficiently manage and process concurrent client-server connections, resulting in significantly faster and more reliable data processing process.',
+    github: 'https://github.com/Quan-Trancs/BookStoreBackEnd'
+  },
+  {}
   // Add more image URLs as needed
 ]);
 
@@ -91,7 +108,7 @@ function previous() {
 }
 </script>
 
-<style>
+<style scoped>
 .gallery{
   display:flex;
   justify-content:center;
