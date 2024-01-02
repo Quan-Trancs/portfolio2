@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="text-black">.</div>
-        <div class="pt-16 pb-32">
+        <div class="pt-0 pb-32">
             <div class="mt-24 mx-10 px-20 mb-10">
                 <div class="mt-5 text-5xl font-bold text-center">About Me</div>
             </div>
